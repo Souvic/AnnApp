@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  function mf(z) {
+  if(document.getElementById(z).value=="2"){
+    document.getElementById(z).style.backgroundColor = '#F44336';document.getElementById(z).value="0";
+	}else{
+	
+	if(document.getElementById(z).value=="0"){
+    document.getElementById(z).style.backgroundColor = '#263238';document.getElementById(z).value="1";
+	}else{
+	if(document.getElementById(z).value=="1"){
+    document.getElementById(z).style.backgroundColor = '#4CAF50';document.getElementById(z).value="2"
+	}
+	}
+	}
+      
+}
+  
+  
+  
+  
+  
+  </script>
+  
+  
+  
+</head>
+
+
+
+<style>
+
+.button {
+    background-color: #263238; /* gray */
+    border: none;
+	float: center;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	border-radius:12px;
+	margin:5px;
+}
+
+.submitt{
+    background-color: #AAAAAA; /* gray */
+    border: none;
+	position:absolute;
+	right:0;
+	bottom:0;
+    color: black;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	border-radius:12px;
+	margin:50px;
+}
+.exit{
+    background-color: #AAAAAA; /* gray */
+    border: none;
+	position:absolute;
+	left:0;
+	bottom:0;
+    color: black;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	border-radius:12px;
+	margin:50px;
+}
+
+.button:hover{
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+
+
+</style>
+
+<body>
+
+
+
+
+
+<div class="container-fluid">
+  <div class="jumbotron" style="height:30em">
+    <p id="qp" style="font-size:30px ;text-align: center; vertical-align: middle;  ">{{q}}<p>      
+ </div>
+   
+</div>
+<div style="display: inline-block">
+  <button id="1" value ="1" class="button" onclick="mf('1')">Clarity</button>
+  <button id="2" value ="1" class="button" onclick="mf('2')">Novelty</button>
+  <button id="3" value ="1" class="button" onclick="mf('3')">Usefulness</button>
+  <button id="4" value ="1" class="button" onclick="mf('4')">Replicability</button>
+  <button id="5" value ="1" class="button" onclick="mf('5')">Relevance </button>
+  <button id="6" value ="1" class="button" onclick="mf('6')">SOTA</button>
+</div>
+<p></p>
+<button id="logout" onclick="exitFunction()" class="exit"><strong>Log out</strong></button>
+<button id="submitt" onclick="myFunction()" class="submitt"><strong>Submit</strong></button>
+<form style="visibility:hidden" id="myForm" action="/app/login/" method="post">
+    UserName:<input type="text" name="FirstName" value={{fn}}></input>
+<p></p>
+PassWord : <input type="password" name="password" value={{pwd}}></input>
+
+<br><br>
+<button style="margin-right:115px;">Log In</button>
+<button style="margin-left:10px;">Register</button>
+<input id="q" style="visibility:hidden" type="text" name="q" value="q"></input>
+<input id="a" style="visibility:hidden" type="text" name="a" value="a"></input>
+<input id="from" style="visibility:hidden" type="text" name="from" value="app"></input>
+
+</form>
+
+<script>
+function myFunction() {
+    document.getElementById("a").value=document.getElementById("1").value.toString()+document.getElementById("2").value.toString()+document.getElementById("3").value.toString()+document.getElementById("4").value.toString()+document.getElementById("5").value.toString()+document.getElementById("6").value.toString();
+    document.getElementById("q").value=document.getElementById("qp").innerHTML
+    document.getElementById("myForm").submit();
+}
+function exitFunction(){document.getElementById("from").value="exit";document.getElementById("myForm").submit();}
+    
+</script>
+</body>
+</html>

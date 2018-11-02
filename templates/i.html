@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Log In Form</title>
+</head>
+
+<form id="myForm" action="/app/login/" method="post">
+UserName: <input type="text" name="FirstName" value=""></input>
+<p></p>
+PassWord : <input type="password" name="password" value=""></input>
+
+<br><br>
+<button style="margin-right:115px;" onclick="myFunction()">Log In</button>
+<button style="margin-left:10px;" onclick="myFunction2()">Register</button>
+<input id="from" style="visibility:hidden" type="text" name="from" value="i"></input>
+</form>
+<p></p>
+<p>{{error}}</p>
+<script>
+function myFunction() {
+    document.getElementById("myForm").submit();
+}
+
+function myFunction2() {
+    document.getElementById("from").value="register";
+    document.getElementById("myForm").submit();
+}
+</script>
+</html>
