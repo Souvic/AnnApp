@@ -1,0 +1,3 @@
+The paper proposes very nice and relevant problem.#uniqjoin#The solution approach and evaluation seems thorough.#uniqjoin#Overall, the motivation and the research contribution of the research work has not been clearly explained by
+the author.#uniqjoin#The described problem
+is for six classes, and there is no justification for the choice of these specific classification models.#uniqjoin#e#uniqjoin#f#uniqjoin#g#uniqjoin#h#uniqjoin#i#uniqjoin#j#uniqjoin#k#uniqjoin#l#uniqjoin#m
