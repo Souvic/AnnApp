@@ -1,5 +1,10 @@
+
+import os, ssl
+if (not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None)): 
+  ssl._create_default_https_context = ssl._create_unverified_context
+
+
 from flask import Flask, request,render_template
-import os
 # set the project root directory as the static folder, you can set others.
 app = Flask(__name__, static_url_path='')
 def valid_login(p,q):
